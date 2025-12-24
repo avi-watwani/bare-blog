@@ -1,0 +1,13 @@
+[build]
+  command = "composer install --no-dev --optimize-autoloader && php artisan config:cache && php artisan route:cache && php artisan view:cache && npm ci && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+  PHP_VERSION = "8.3"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
+
